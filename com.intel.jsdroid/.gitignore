@@ -3,7 +3,7 @@
 *.class
 *.dll
 *.exe
-*.js
+#*.js
 android.core.Start.html
 
 # Project config #
