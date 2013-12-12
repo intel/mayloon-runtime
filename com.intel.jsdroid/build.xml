@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="jsdroid">
+    <property environment="env" />
+    <property name="script-path" value="build_script" />
+    <property name="user.name" value="autobuild" />
+	<property name="j2s.source.dir" location="../../mayloon-portingtool/sources" />
+
+    <!--	<property name="java-output" value="bin/framework"/>  -->
+    <property name="ECLIPSE_HOME" value="../../../../eclipse4runtime-indigo-sr2" />
+    <property name="debuglevel" value="source,lines,vars" />
+    <property name="target" value="1.6" />
+    <property name="source" value="1.6" />
+    <path id="JUnit 3.libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.junit_3.8.2.v3_8_2_v20100427-1100/junit.jar" />
+    </path>
+    <path id="jsdroid.classpath">
+        <pathelement location="bin/framework" />
+        <pathelement location="${ECLIPSE_HOME}/plugins/net.sf.j2s.ajax_2.0.0/ajaxcore.jar" />
+        <path refid="JUnit 3.libraryclasspath" />
+    </path>
+    <target name="init">
+        <mkdir dir="bin/framework" />
+        <copy includeemptydirs="false" todir="bin/framework">
+            <fileset dir="src">
+                <exclude name="**/*.java" />
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete file="./mayloon.zip" />
+        <delete file="build_script/package_name.jason" />
+        <delete dir="sdk_config/js" />
+    </target>
+    <target depends="clean" name="cleanall" />
+    <target depends="build-subprojects,build-project" name="build" />
+    <target name="build-subprojects" />
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}" />
+        <!-- This step is needed by checking the java compile problem only. It will be removed after we integrate org.eclipse.jdt.apt.core.aptBuild build logic into our autobuild workflow. see build_readme.txt  -->
+        <!-- <javac debug="true" debuglevel="${debuglevel}" destdir="bin/framework" source="${source}" target="${target}">
+            <src path="src" />
+            <classpath refid="jsdroid.classpath" />
+        </javac>
+        -->
+        <antcall target="clean" />
+        <antcall target="get-package-name" />
+        <antcall target="prepare-runtime-js" />
+        <antcall target="mayloon-jar" />
+        <antcall target="java-core" />
+        <antcall target="mayloon-zip" />
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects" />
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar" />
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar" />
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar" />
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter" />
+        <antcall target="build" />
+    </target>
+    <target name="get-package-name">
+        <exec dir="${script-path}" executable="python" failonerror="true">
+            <arg line="fixs_loadpath.py bin/framework" />
+        </exec>
+    </target>
+    <target name="prepare-runtime-js">
+        <exec dir="${script-path}" executable="python" failonerror="true">
+            <arg line="extractor.py bin/framework sdk_config" />
+        </exec>
+        <delete file="sdk_config/js/framework/android/core/Start.js"/>
+    </target>
+    <target name="mayloon-jar">
+        <jar destfile="./sdk_config/mayloon.jar" basedir="./bin/framework" includes="**/*.class">
+            <include name="build" />
+            <manifest>
+                <!-- Who is building this jar? -->
+                <attribute name="Built-By" value="${user.name}" />
+                <!-- Information about the program itself -->
+                <attribute name="Implementation-Vendor" value="INTEL" />
+                <attribute name="Implementation-Title" value="Mayloon Product" />
+                <attribute name="Implementation-Version" value="0.1" />
+            </manifest>
+        </jar>
+    </target>
+    <target name="java-core">
+        <jar destfile="./sdk_config/mayloon.jar" update="true">
+            <fileset dir="${j2s.source.dir}/net.sf.j2s.java.core/bin">
+                <include name="**/*.class" />
+            </fileset>
+        </jar>
+    </target>
+    <target name="mayloon-zip">
+        <zip destfile="./mayloon.zip" update="true">
+            <fileset dir="./sdk_config" />
+            <fileset dir=".">
+                <include name="external/**" />
+            </fileset>
+            <fileset dir=".">
+                <include name="res_sys/**" />
+            </fileset>
+            <fileset dir=".">
+                <include name="main_src/**" />
+            </fileset>
+        </zip>
+    </target>
+
+
+</project>

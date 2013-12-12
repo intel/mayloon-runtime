@@ -1,0 +1,162 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android)
+
+Name: res/drawable-port/bg_sunset.jpg
+SHA1-Digest: 2Bxv2miNGwLt2tKhLzdBsb+FCow=
+
+Name: res/drawable-port/bg_sunrise_icon.jpg
+SHA1-Digest: +SiLcalxoWsW3bQw8zllyc8tQTk=
+
+Name: res/drawable/grid_selector.xml
+SHA1-Digest: BbxT2y6w0V07IRmbNoLblhLKUcg=
+
+Name: res/drawable-mdpi/pressed_application_background_static.png
+SHA1-Digest: Y/uEl3E1RGiWPV9VgtOlFy9VwyE=
+
+Name: res/drawable-hdpi/pressed_application_background_static.png
+SHA1-Digest: dDIa3Igz10nN0ohOR1zT64E6Ut8=
+
+Name: res/layout/all_applications_button.xml
+SHA1-Digest: Tu2SRDGS2WZfG5PM+5vLRiaawBQ=
+
+Name: res/drawable-mdpi/hide_all_applications.png
+SHA1-Digest: TpP9aDGJrxx6VaJgn9QsJwjKQ7c=
+
+Name: res/drawable-land/bg_sunrise_icon.jpg
+SHA1-Digest: xkayp1N67var0g9WDOM43AtJZ7k=
+
+Name: res/drawable/all_applications_background.xml
+SHA1-Digest: 2FvFlKxsjZfuC1VjOEReFNbFrVk=
+
+Name: res/drawable-mdpi/ic_launcher_home.png
+SHA1-Digest: kmMgUJejv7lr2WiP+mLNZlmg2No=
+
+Name: res/drawable-land/bg_sunset_icon.jpg
+SHA1-Digest: XXg9xAAURCN6Z0ieTSHJz+/4p8A=
+
+Name: res/drawable-hdpi/ic_launcher_home.png
+SHA1-Digest: u2PScOs7bDF4ubXDlhOLkUWGL5s=
+
+Name: res/drawable-hdpi/ic_launcher_allshow.png
+SHA1-Digest: wJBraK7SshrXwTV9M53xTnJDZ2Q=
+
+Name: res/drawable-land/bg_android_icon.jpg
+SHA1-Digest: 0WrqiCnSXoIb3NU8aFFqrU1D1fQ=
+
+Name: res/drawable-port/bg_sunrise.jpg
+SHA1-Digest: IE1hELo0XSaIdZA/tiDba/ZO+Ow=
+
+Name: res/layout/application.xml
+SHA1-Digest: Pkmv2NCWZMKb0STXiZlwzRmB8sU=
+
+Name: res/drawable-port/bg_android.jpg
+SHA1-Digest: iiU3FNEsaMhLKHQM+AruNYDbArI=
+
+Name: res/anim/grid_entry.xml
+SHA1-Digest: hsVgaHGQWhMwWhp5jnxRL5ix/J4=
+
+Name: res/color/bright_text_dark_focused.xml
+SHA1-Digest: 4HPxdyDSsS4EFw21kqAN8xsJeJM=
+
+Name: res/drawable-mdpi/application_background.9.png
+SHA1-Digest: F+crDdcmDwfyaiMDL6ERKRXf92s=
+
+Name: res/drawable-mdpi/ic_launcher_allshow.png
+SHA1-Digest: SrwF9+yPHNaUwl/yKyTY6Hhdies=
+
+Name: res/drawable-land/bg_sunset.jpg
+SHA1-Digest: knsLc7fLdsYqiyb/JLGK0P+r8eo=
+
+Name: res/anim/fade_out.xml
+SHA1-Digest: HvlxULoJkpzfsQBWLECG5NG6Ack=
+
+Name: res/layout-land/home.xml
+SHA1-Digest: h91jsnTyJUygL2Ka4xYVezZGfjk=
+
+Name: res/drawable-mdpi/focused_application_background_static.png
+SHA1-Digest: BWIv5iswahUs9y8ldYvv/A1kyrE=
+
+Name: res/drawable-hdpi/hide_all_applications.png
+SHA1-Digest: ID6EVOHfx4mRRIYJsxcBECszRY0=
+
+Name: res/drawable-port/bg_sunset_icon.jpg
+SHA1-Digest: tyvoFLGC1GErZ4fzYgIWQFMk31o=
+
+Name: res/drawable-hdpi/focused_application_background_static.png
+SHA1-Digest: 1O67nv+Ra6hGkqTk3ZQbEw9BBPw=
+
+Name: res/drawable-land/bg_android.jpg
+SHA1-Digest: vUs8xtI5LwRHYZOCDlQ7qaX38Lw=
+
+Name: res/drawable-hdpi/all_applications_label_background.9.png
+SHA1-Digest: a+RQ7JTgU45yCxRHRSmmV5T+8Ss=
+
+Name: res/layout/wallpaper.xml
+SHA1-Digest: oOqGfdxGf8e5PneBLH2whLvKQns=
+
+Name: res/drawable-mdpi/all_applications_label_background.9.png
+SHA1-Digest: z8U1EpN/+l3nc/bPDCVG48c3c1Q=
+
+Name: res/drawable-hdpi/show_all_applications.png
+SHA1-Digest: XRhr645vEtY8/0v70gh+eiIgPsg=
+
+Name: res/drawable-mdpi/ic_launcher_allhide.png
+SHA1-Digest: aQJbuy37J7/oGuP76Yct3PkJME8=
+
+Name: resources.arsc
+SHA1-Digest: UhiYWdKe+5Sxz2TtpzXTA3RsVHE=
+
+Name: AndroidManifest.xml
+SHA1-Digest: pFiR6vZ0J8n/q/KqVxYiqfnbb74=
+
+Name: res/drawable/all_applications_button_background.xml
+SHA1-Digest: VwL61ho9rmLprA9GG4sIYKjqZIw=
+
+Name: res/drawable-port/bg_android_icon.jpg
+SHA1-Digest: bhLfAWSfJw2rODCclz7r/O1LsWM=
+
+Name: res/anim/hide_applications.xml
+SHA1-Digest: lbASxKgK2uzKnDmV05TSmOM+izU=
+
+Name: res/drawable-mdpi/application_background_static.png
+SHA1-Digest: lxTJE+oJRP/TA7UZVDWm0R0Vp64=
+
+Name: res/drawable-land/bg_sunrise.jpg
+SHA1-Digest: 9/+VIhu9lolwarg0770Uw8qVwZ4=
+
+Name: res/layout-port/home.xml
+SHA1-Digest: 1RTHSzj41eUyIHg8Bm3hIZgBVvY=
+
+Name: classes.dex
+SHA1-Digest: tjZ6LosSiRYqzmelYlnPcHFJkrA=
+
+Name: res/drawable-hdpi/application_background.9.png
+SHA1-Digest: F9oWK1bYdzQzDY19060jKUBgItQ=
+
+Name: res/layout/favorite.xml
+SHA1-Digest: yhsw4n3T8LR4tRQNvGctq+13lmc=
+
+Name: res/drawable/all_applications.xml
+SHA1-Digest: XbHFY9t0/Lpp0cx7rSohzrd1Hk0=
+
+Name: res/drawable-hdpi/ic_launcher_allhide.png
+SHA1-Digest: yMh7GAJ5mixWBNPAbl781WU1Cvs=
+
+Name: res/anim/show_applications.xml
+SHA1-Digest: 1whLsSkdJ1MXDhb3fRxNw2z+sO8=
+
+Name: res/drawable/favorite_background.xml
+SHA1-Digest: E8WfIO3J6NMwfB+OjDYBCEqr2Kk=
+
+Name: res/drawable-hdpi/application_background_static.png
+SHA1-Digest: EMl2d17F39xUucq0uaGP7YIiGgc=
+
+Name: res/drawable-mdpi/show_all_applications.png
+SHA1-Digest: YZvpPhwyuzp8q9JzprqkBYj1n+c=
+
+Name: res/anim/grid_exit.xml
+SHA1-Digest: mMshFXINSTdDHbyqKna/qmVkbdg=
+
+Name: res/anim/fade_in.xml
+SHA1-Digest: ohtS1yfTWE44A+45Hnf0mL0a1z4=
+

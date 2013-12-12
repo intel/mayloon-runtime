@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="check">
+    <property environment="env" />
+    <property name="ECLIPSE_HOME" value=""/>
+    <property name="debuglevel" value="source,lines,vars" />
+    <property name="dest.dir" value="bin/framework" />
+    <property name="target" value="1.6" />
+    <property name="source" value="1.6" />
+    <path id="JUnit 3.libraryclasspath">
+        <pathelement path="${ECLIPSE_HOME}/plugins/org.junit_3.8.2.v3_8_2_v20100427-1100/junit.jar" />
+    </path>
+    <path id="jsdroid.classpath">
+    	<pathelement location="${dest.dir}" />
+        <pathelement path="${ECLIPSE_HOME}/plugins/net.sf.j2s.ajax_2.0.0/ajaxcore.jar" />
+        <path refid="JUnit 3.libraryclasspath" />
+    </path>
+    <target depends="build-project" name="build" />
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}" />
+        <!-- This step is needed by checking the java compile problem only.-->
+        <javac debug="true" debuglevel="${debuglevel}" destdir="${dest.dir}" source="${source}" target="${target}" includeantruntime="off">
+            <src path="src" />
+            <src path="tests/src"/>
+            <src path="tests/tests/src"/>
+            <src path="test-runner/src"/>
+            <src path="apps"/>
+            <exclude name="com/hkmc/av/app/radio/**"/>
+            <classpath refid="jsdroid.classpath" />
+        </javac>
+    </target>
+    <target depends="clean" name="init">
+    	<mkdir dir="${dest.dir}"/>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter" />
+        <antcall target="build" />
+    </target>
+    <target name="clean">
+    	<delete dir="${dest.dir}"/>
+    </target>
+</project>

@@ -1,0 +1,27 @@
+# Compiled source #
+###################
+*.class
+*.dll
+*.exe
+*.js
+android.core.Start.html
+
+# Project config #
+.settings/
+.j2s
+*.j2s
+.classpath
+.project
+
+
+# Logs #
+######################
+*.log
+
+
+# OS generated files #
+######################
+.DS_Store*
+Thumbs.db
+
+
