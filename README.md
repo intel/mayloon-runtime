@@ -6,7 +6,7 @@ It contains two parts:
   2. mayloon-runtime, which basically simulates many Android framework capabilities on top of HTML5 platforms and needs to
   be loaded with the converted Android app before launching.
   
-Please checkout the wiki pages for user guide and the design rationles about how we make the conversion possible.
+Please checkout the <a href="https://github.com/01org/mayloon-runtime/wiki">wiki</a> pages for user guide and the design rationles about how we make the conversion possible.
 
 Please submit your bug reports via the GitHub issues.
   
