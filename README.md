@@ -8,7 +8,7 @@ It contains two parts:
   
 Please checkout the <a href="https://github.com/01org/mayloon-runtime/wiki">wiki</a> pages for user guide and the design rationles about how we make the conversion possible.
 
-Please submit your bug reports via the GitHub issues.
+Please submit your bug reports via the GitHub <a href="https://github.com/01org/mayloon-runtime/issues">issues</a>
   
 mayloon-runtime
 ===============
