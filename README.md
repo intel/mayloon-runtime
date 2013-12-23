@@ -14,3 +14,7 @@ mayloon-runtime
 ===============
 
 This is the source code of the mayloon runtime. The code for the plugin is hosted in another repo (mayloon-porting-tool)
+
+License
+===============
+MayLoon runtime is released under <a href="http://apache.org/licenses/LICENSE-2.0.html">Apache License, Version 2.0</a>
