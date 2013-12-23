@@ -13,7 +13,7 @@ Please submit your bug reports via the GitHub <a href="https://github.com/01org/
 mayloon-runtime
 ===============
 
-This is the source code of the mayloon runtime. The code for the plugin is hosted in another repo (mayloon-porting-tool)
+This is the source code of the mayloon runtime. The code for the plugin is hosted in another repo (<a href="https://github.com/01org/mayloon-portingtool">mayloon-porting-tool</a>)
 
 
 getting-started
