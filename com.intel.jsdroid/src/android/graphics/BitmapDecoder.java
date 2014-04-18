@@ -520,6 +520,15 @@ public class BitmapDecoder {
           data[i++] = v;
           data[i++] = v;
           data[i++] = alpha ? input[k++] : 255;
+          //workaround for tizen. The ImageData.data is a Uint8ClampedArray representing a 
+          //one-dimensional array containing the data in the RGBA order. On Chrome, when 
+          //alpha value is 0, the pixel will be transparent, regardless of the other values. 
+          //But on tizen, the same effect need the RGBA values to be 0, 0, 0, 0
+          if(alpha && data[i-1] == 0){
+            data[i-2] = 0;
+            data[i-3] = 0;
+            data[i-4] = 0;
+          }
           j = k;
         }
       } else {
@@ -529,6 +538,12 @@ public class BitmapDecoder {
           data[i++] = input[k++];
           data[i++] = input[k++];
           data[i++] = alpha ? input[k++] : 255;
+          //the same workaround for tizen. 
+          if(alpha && data[i-1] == 0){
+            data[i-2] = 0;
+            data[i-3] = 0;
+            data[i-4] = 0;
+          }
           j = k;
         }
       }
