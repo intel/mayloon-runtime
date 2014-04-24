@@ -20,6 +20,7 @@ import android.util.Log;
 import android.util.Printer;
 import android.os.Looper;
 import java.lang.reflect.Modifier;
+import java.util.HashMap;
 
 /**
  * A Handler allows you to send and process {@link Message} and Runnable
@@ -69,6 +70,7 @@ public class Handler {
 	 */
 	private static final boolean FIND_POTENTIAL_LEAKS = false;
 	private static final String TAG = "Handler";
+	private HashMap<Integer, Object> delayMsgTimer = new HashMap<Integer, Object>();
 
 	/**
 	 * Callback interface you can use when instantiating a Handler to avoid
@@ -421,12 +423,13 @@ public class Handler {
 		if (delayMillis > 0) {
 			/**
 		  	@j2sNative
-	  		window.setTimeout((function(handler, m) {
+	  		var timer = window.setTimeout((function(handler, m) {
 				return function() {
 					//window.log("timeout: sendMessage");
 					handler.sendMessageAtTime(m, android.os.SystemClock.uptimeMillis());
 				};
 			})(this,msg), delayMillis);
+			this.delayMsgTimer.put(msg.what, timer);
 			 */
 			{
 			}
@@ -500,7 +503,7 @@ public class Handler {
 	 * message queue.
 	 */
 	public final void removeMessages(int what) {
-		mQueue.removeMessages(this, what, null, true);
+		this.removeMessages(what, null);
 	}
 
 	/**
@@ -508,6 +511,16 @@ public class Handler {
 	 * 'object' that are in the message queue.
 	 */
 	public final void removeMessages(int what, Object object) {
+		/**
+	  	@j2sNative
+	  	var timer = this.delayMsgTimer.get(what);
+	  	if(timer != null){
+	  		window.clearTimeout(timer);
+	  	}
+		this.delayMsgTimer.remove(what);
+		 */
+		{
+		}
 		mQueue.removeMessages(this, what, object, true);
 	}
 
