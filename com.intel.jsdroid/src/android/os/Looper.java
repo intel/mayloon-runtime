@@ -152,7 +152,7 @@ public class Looper {
 		return myLooper().mQueue;
 	}
 
-	private Looper() {
+	public Looper() {
 		mQueue = new MessageQueue();
 		mRun = true;
 	}
