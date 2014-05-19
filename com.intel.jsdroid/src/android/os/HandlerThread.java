@@ -28,6 +28,7 @@ public class HandlerThread extends Thread {
     public HandlerThread(String name) {
         super(name);
         mPriority = Process.THREAD_PRIORITY_DEFAULT;
+        mLooper = new Looper();
     }
 
     /**
@@ -41,6 +42,7 @@ public class HandlerThread extends Thread {
     public HandlerThread(String name, int priority) {
         super(name);
         mPriority = priority;
+        mLooper = new Looper();
     }
 
     /**
@@ -51,15 +53,6 @@ public class HandlerThread extends Thread {
     }
 
     public void run() {
-        // mTid = Process.myTid();
-        Looper.prepare();
-        synchronized (this) {
-            mLooper = Looper.myLooper();
-            notifyAll();
-        }
-        // Process.setThreadPriority(mPriority);
-        onLooperPrepared();
-        Looper.loop();
         mTid = -1;
     }
 
@@ -72,20 +65,6 @@ public class HandlerThread extends Thread {
      * @return The looper.
      */
     public Looper getLooper() {
-        if (!isAlive()) {
-            return null;
-        }
-
-        // If the thread has been started, wait until the looper has been
-        // created.
-        synchronized (this) {
-            while (isAlive() && mLooper == null) {
-                try {
-                    wait();
-                } catch (InterruptedException e) {
-                }
-            }
-        }
         return mLooper;
     }
 
@@ -96,9 +75,8 @@ public class HandlerThread extends Thread {
      * returned.
      */
     public boolean quit() {
-        Looper looper = getLooper();
-        if (looper != null) {
-            looper.quit();
+        if (mLooper != null) {
+        	mLooper.quit();
             return true;
         }
         return false;

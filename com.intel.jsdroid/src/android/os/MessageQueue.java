@@ -239,7 +239,7 @@ public class MessageQueue {
             Message msg = this.mMessages; // get the head
             if (msg != null) {
                 if (msg.target == null) {
-                    continue;
+                    return;
                 }
                 
                 if (false)
